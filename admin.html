@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - Dari DZ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Tajawal', sans-serif; background: #0f172a; color: white; padding: 20px; direction: rtl; }
+        .box { max-width: 500px; margin: 20px auto; background: #1e293b; padding: 25px; border-radius: 12px; border: 1px solid #334155; }
+        h2, h3 { color: #f59e0b; margin-bottom: 15px; }
+        input, select, button { width: 100%; padding: 12px; margin-bottom: 12px; border: 1px solid #475569; border-radius: 8px; background: #0f172a; color: white; box-sizing: border-box; }
+        button { background: #d97706; font-weight: bold; border: none; cursor: pointer; transition: 0.3s; }
+        button:hover { background: #b45309; }
+        .item { display: flex; justify-content: space-between; align-items: center; background: #334155; padding: 12px; margin-top: 8px; border-radius: 8px; }
+        .btn-danger { background: #ef4444; width: auto; padding: 6px 12px; margin: 0; }
+        .btn-warning { background: #f59e0b; width: auto; padding: 6px 12px; margin: 0 5px 0 0; }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h2>تعديل أرقام الواتساب</h2>
+        <label style="font-size:0.85rem; color:#94a3b8;">رقم واتساب الطلبات:</label>
+        <input type="text" id="settingWhatsapp" placeholder="أدخل رقم الطلبات (مثال: 213600000000)">
+        
+        <label style="font-size:0.85rem; color:#94a3b8;">رقم واتساب الدعم الفني (Support):</label>
+        <input type="text" id="settingSupportWhatsapp" placeholder="أدخل رقم الدعم الفني (مثال: 213600000000)">
+        
+        <button id="btnSavePhone">حفظ الأرقام</button>
+
+        <hr style="border-color: #334155; margin: 25px 0;">
+
+        <h2>إضافة منتج جديد</h2>
+        <form id="addForm">
+            <input type="text" id="pTitle" placeholder="اسم المنتج" required>
+            <input type="number" id="pPrice" placeholder="السعر (دج)" required>
+            <select id="pCategory">
+                <option value="هواتف">هواتف وملحقات</option>
+                <option value="ساعات">ساعات ذكية</option>
+                <option value="إلكترونيات">إلكترونيات</option>
+                <option value="عطور">عطور</option>
+                <option value="أحذية">أحذية</option>
+            </select>
+            <input type="file" id="pImage" accept="image/*" required>
+            <button type="submit" id="btnSubmit">نشر المنتج</button>
+        </form>
+
+        <hr style="border-color: #334155; margin: 25px 0;">
+        <h3>المنتجات الحالية</h3>
+        <div id="adminList">جاري التحميل...</div>
+    </div>
+
+    <script type="module" src="admin.js"></script>
+</body>
+</html>
